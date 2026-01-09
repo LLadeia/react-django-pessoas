@@ -1,0 +1,120 @@
+:root {
+  --primary-color: #2c3e50;
+  --card-bg: #ffffff;
+  --bg-color: #f4f6f8;
+  --danger: #e74c3c;
+  --edit: #3498db;
+  --text: #333;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg-color);
+}
+
+/* Container principal */
+.container {
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Título */
+h1 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+/* Lista */
+ul {
+  width: 100%;
+  max-width: 900px;
+  list-style: none;
+}
+
+/* Card da pessoa */
+li {
+  background: var(--card-bg);
+  margin-bottom: 16px;
+  padding: 16px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Foto */
+.pessoa-img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+/* Conteúdo */
+.pessoa-info {
+  flex: 1;
+  color: var(--text);
+}
+
+.pessoa-info p {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+/* Ações */
+.pessoa-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Botões */
+button {
+  border: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.15s, opacity 0.15s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.btn-delete {
+  background: var(--danger);
+  color: #fff;
+}
+
+.btn-edit {
+  background: var(--edit);
+  color: #fff;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pessoa-actions {
+    flex-direction: row;
+  }
+}

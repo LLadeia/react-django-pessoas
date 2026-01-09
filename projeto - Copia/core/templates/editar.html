@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {{pessoa.id}} - 
+    {{pessoa.nome }} - 
+    {{pessoa.idade}} - 
+    {{pessoa.curso}} - 
+    {{pessoa.periodo}} - 
+    {{pessoa.opiniao}} - 
+    {{pessoa.foto}}
+        <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="nome" value="{{ pessoa.nome }}">
+        <input type="number" name="idade" value="{{ pessoa.idade }}">
+        <input type="text" name="curso" value="{{ pessoa.curso }}">
+        <input type="number" name="periodo" value="{{ pessoa.periodo }}">
+        <input type="text" name="opiniao" value="{{ pessoa.opiniao }}">
+        <input type="file" name="foto">
+        <button type="submit">Atualizar</button>
+    </form>
+</body>
+</html>

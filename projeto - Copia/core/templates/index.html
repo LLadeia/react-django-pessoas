@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello world</title>
+</head>
+<body>
+    <p>Hello, world! This is my first Django app.</p>
+    <ul>
+{% for pessoa in pessoas %}
+    <li>
+        Id: {{ pessoa.id }} -
+        nome: {{ pessoa.nome }} -
+        idade: {{ pessoa.idade }} -
+        curso: {{ pessoa.curso }} -
+        periodo: {{ pessoa.periodo }} -
+        opiniao: {{ pessoa.opiniao }}
+
+        {% if pessoa.foto %}
+            <img src="{{ pessoa.foto.url }}" width="200">
+        {% endif %}
+
+        <a href="/core/editar/{{ pessoa.id }}/">Editar</a>
+        <a href="/core/deletar/{{ pessoa.id }}/">Deletar</a>
+    </li>
+{% endfor %}
+ <form action="/core/salvar/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <input type="text" name="nome">
+    <input type="number" name="idade">
+    <input type="text" name="curso">
+    <input type="number" name="periodo">
+    <input type="text" name="opiniao">
+    <input type="file" name="foto">
+
+    <button type="submit">Enviar</button>
+ </form>
+</body>
+</html>
