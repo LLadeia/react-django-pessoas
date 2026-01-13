@@ -82,10 +82,10 @@ WSGI_APPLICATION = 'app.wsgi.application'
 DATABASES = { 'default': { 
     'ENGINE': 'django.db.backends.postgresql', 
     'NAME': 'djangotest', 
-    'USER': 'postgres', 
-    'PASSWORD': '1234', 
-    'HOST': 'localhost', 
-    'PORT': '5432', 
+    'USER': '', 
+    'PASSWORD': '', 
+    'HOST': '', 
+    'PORT': '', 
                           } 
                 }
 # Password validation
